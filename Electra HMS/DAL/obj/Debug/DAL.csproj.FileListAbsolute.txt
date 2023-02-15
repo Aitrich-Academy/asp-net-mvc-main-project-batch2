@@ -1,0 +1,12 @@
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\DAL.dll.config
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\DAL.dll
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\DAL.pdb
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\EntityFramework.dll
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\EntityFramework.xml
+C:\MVC PROJECT\Electra HMS\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.dll
+C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.pdb
