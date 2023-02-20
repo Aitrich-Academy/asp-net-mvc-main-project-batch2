@@ -46,9 +46,11 @@ namespace DAL.Models
 
         public string D_Status { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string D_Password { get; set; }
+
+        [StringLength(50)]
+        public string D_Cpassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }

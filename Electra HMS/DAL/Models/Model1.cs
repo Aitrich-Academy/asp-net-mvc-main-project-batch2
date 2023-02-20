@@ -56,6 +56,10 @@ namespace DAL.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Doctor>()
+                .Property(e => e.D_Cpassword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Doctor>()
                 .HasMany(e => e.Appointment)
                 .WithRequired(e => e.Doctor)
                 .WillCascadeOnDelete(false);
@@ -94,6 +98,10 @@ namespace DAL.Models
 
             modelBuilder.Entity<Patient>()
                 .Property(e => e.P_Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Patient>()
+                .Property(e => e.P_Cpassword)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Patient>()
