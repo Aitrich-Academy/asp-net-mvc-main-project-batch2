@@ -12,9 +12,7 @@ namespace DAL.Manager
         Model1 db = new Model1();
         public List<tbl_Role> GetAllRoles()
         {
-         return   db.tbl_Role.ToList();
-
-
+            return   db.tbl_Role.ToList();
         }
     }
 }
