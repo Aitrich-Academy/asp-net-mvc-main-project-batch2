@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DAL.Manager;
+using DAL.Models;
+using Electra_HMS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +11,60 @@ namespace Electra_HMS.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        // GET: Home
+            LoginManger LogMgr = new LoginManger();
+            public ActionResult Login()
+            {
+                return View();
+            }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            [HttpPost]
+            public ActionResult Login(Ent_Login objUser)
+            {
+                tbl_Login Login_Obj = new tbl_Login();
+                Login_Obj.Email = objUser.Email;
+                Login_Obj.Password = objUser.Password;
 
-            return View();
-        }
+                int roleId = LogMgr.LoginUser(Login_Obj);
+                if (roleId == 1)
+                {
+                    Session["Admin"] = objUser.Email;
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+                    return RedirectToAction("ProfileView", "Admin");
+                }
+                else if (roleId == 2)
+                {
 
-            return View();
+                    Session["Doctor"] = objUser.Email;
+                    Doctor D_Obj = LogMgr.DoctorDetails(objUser.Email.ToString());
+
+                    if (D_Obj.D_Status != "A")
+                    {
+                        ViewBag.statusDoc = "Account not found";
+                        return View();
+                    }
+                    Session["DoctorDetails"] = new string[] { D_Obj.D_Name };
+                    return RedirectToAction("ProfileView", "Doctor");
+                }
+                else if (roleId == 3)
+                {
+                    Session["Patient"] = objUser.Email;
+                    Patient P_Obj = LogMgr.PatientDetails(objUser.Email.ToString());
+
+                    if (P_Obj.P_Status != "A")
+                    {
+                        ViewBag.statusPat = "Account not found";
+                        return View();
+                    }
+                    Session["PatientDetails"] = new string[] { P_Obj.P_Name };
+                    return RedirectToAction("ProfileView", "Patient");
+                }
+                else
+                {
+                    ViewBag.msg = "User not found";
+                    return View();
+                }
+            }
+
         }
     }
-}
