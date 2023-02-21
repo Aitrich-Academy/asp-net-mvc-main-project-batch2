@@ -1,0 +1,78 @@
+﻿@model Electra_HMS.Models.Ent_Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<h2>Login</h2>
+<div>
+    <div class="login_wrapper">
+        <section id="loginForm" class="login_content">
+
+            @if (@TempData["AdminSuccess"] != null || @TempData["DoctSuccess"] != null || @TempData["PatientSuccess"] != null || @ViewBag.statusDoc != null || @ViewBag.statusPat != null || @ViewBag.msg != null)
+            {
+                <span id="successReg" class=" mt-2 mx-auto">
+
+                    <span class="alert text-success">
+
+                        <strong>@TempData["AdminSuccess"]</strong>
+                        <strong>@TempData["DoctSuccess"]</strong>
+                        <strong>@TempData["PatientSuccess"]</strong>
+                    </span>
+                    <span class="alert text-danger">
+                        <strong>@ViewBag.statusDoc</strong>
+                        <strong>@ViewBag.statusPat</strong>
+
+                        <strong class="text-center">@ViewBag.msg</strong>
+
+                    </span>
+
+                </span>
+
+            }
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", @type = "password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+
+
+
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <div class="form-group text-center mt-3 mb-3">
+                        <div class="col-md-offset-2 col-md-12 mb-3">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </div>
+                        <div class="mb-3">
+                            @Html.ActionLink("Don't have an account?? Sign up", "Regisration", "Home")
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <div>
+                        <h1><i class="fa fa-hospital-o"></i> Electra Managment System</h1>
+                        <p>©2023 All Rights Reserved. EMS is Web based system to automate Hospital operations</p>
+                    </div>
+                </div>
+
+            }
+        </section>
+    </div>
+
+</div>
+
