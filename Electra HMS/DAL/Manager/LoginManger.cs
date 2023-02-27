@@ -11,23 +11,21 @@ namespace DAL.Manager
     {
         Model1 db = new Model1();
 
-        public int LoginUser(tbl_Login checkObj)
+        public tbl_Login LoginUser(tbl_Login checkObj)
         {
             tbl_Login isExist = db.tbl_Login.Where(e => e.Email == checkObj.Email && e.Password == checkObj.Password).SingleOrDefault();
             int roleId = 0;
             if (isExist != null)
             {
                 roleId = Convert.ToInt32(isExist.UserRole);
-                return roleId;
+                return isExist;
             }
-            return roleId;
+            return null;
         }
 
         public Doctor DoctorDetails(string emailId)
         {
-
             return db.Doctor.Where(x => x.D_Email == emailId).FirstOrDefault();
-
         }
         public Patient PatientDetails(string emailId)
         {
