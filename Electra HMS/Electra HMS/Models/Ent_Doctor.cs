@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -37,8 +38,9 @@ namespace Electra_HMS.Models
         public string D_Gender { get; set; }
 
         [Required(ErrorMessage = "Required!!")]
-        [DisplayName("Date of birth")]
-        public DateTime D_DOB { get; set; }
+        [Display(Name = "Date Of Birth")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
+        public DateTime D_DOB { get; set; } 
 
         public string D_Status { get; set; }
 
@@ -46,5 +48,10 @@ namespace Electra_HMS.Models
         [RegularExpression(@"^.*(?=.{8,})(?=.*[\d])(?=.*[\W]).*$", ErrorMessage = "- contains at least 8 characters \n - contains at least one digit \n - contains at least one special character")]
 
         public string D_Password { get; set; }
+
+        [NotMapped] // Does not effect with your database
+        [Required(ErrorMessage = "Confirm Password required")]
+        [Compare("D_Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
+        public string ConfirmPassword { get; set; }
     }
 }
