@@ -34,23 +34,18 @@ namespace DAL.Models
         [Required]
         public string D_Address { get; set; }
 
-        public string D_ContactNo { get; set; }
-
         [StringLength(100)]
         public string D_Specialization { get; set; }
 
         [Required]
         public string D_Gender { get; set; }
 
-        public DateTime D_DOB { get; set; }
+        public DateTime? D_DOB { get; set; }
 
         public string D_Status { get; set; }
 
         [StringLength(50)]
         public string D_Password { get; set; }
-
-        [StringLength(50)]
-        public string D_Cpassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }
