@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Electra_HMS.Models.Ent_Doctor>
+
+@{
+    ViewBag.Title = "ListDoctor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ListDoctor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_PhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Specialization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_PhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Specialization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfirmPassword)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateDoctor", new { id=item.DoctorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DoctorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DoctorID })
+        </td>
+    </tr>
+}
+
+</table>

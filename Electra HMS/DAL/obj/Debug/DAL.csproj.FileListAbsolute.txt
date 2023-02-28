@@ -10,3 +10,14 @@ C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.dll
 C:\MVC PROJECT\Electra HMS\DAL\obj\Debug\DAL.pdb
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\DAL.dll.config
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\DAL.dll
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\DAL.pdb
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\EntityFramework.dll
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\EntityFramework.xml
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\obj\Debug\DAL.dll
+C:\Users\SARATH\OneDrive\Desktop\Electra HMS\asp-net-mvc-main-project-batch2\Electra HMS\DAL\obj\Debug\DAL.pdb
