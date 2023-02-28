@@ -36,7 +36,7 @@ namespace DAL.Models
         [StringLength(50)]
         public string P_Gender { get; set; }
 
-        public DateTime P_DOB { get; set; }
+        public DateTime? P_DOB { get; set; }
 
         [StringLength(50)]
         public string P_Status { get; set; }
@@ -46,9 +46,6 @@ namespace DAL.Models
 
         [StringLength(50)]
         public string P_Password { get; set; }
-
-        [StringLength(50)]
-        public string P_Cpassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }
