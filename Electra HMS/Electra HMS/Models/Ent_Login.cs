@@ -18,6 +18,6 @@ namespace Electra_HMS.Models
 
         [Required]
         [DisplayName("Password")]
-        public string Password { get; set; }
+        public string UserPassword { get; set; }
     }
 }

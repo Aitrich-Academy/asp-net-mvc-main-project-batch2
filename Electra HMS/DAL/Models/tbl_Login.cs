@@ -16,12 +16,15 @@ namespace DAL.Models
         public string Email { get; set; }
 
         [StringLength(50)]
-        public string Password { get; set; }
+        public string UserPassword { get; set; }
 
         [StringLength(50)]
         public string UserId { get; set; }
 
         public int? UserRole { get; set; }
+
+        [StringLength(50)]
+        public string UserStatus { get; set; }
 
         public virtual tbl_Role tbl_Role { get; set; }
     }

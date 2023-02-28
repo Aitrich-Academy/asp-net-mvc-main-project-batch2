@@ -23,7 +23,7 @@ namespace Electra_HMS.Controllers
             {
                 tbl_Login Login_Obj = new tbl_Login();
                 Login_Obj.Email = objUser.Email;
-                Login_Obj.Password = objUser.Password;
+                Login_Obj.UserPassword = objUser.UserPassword;
 
             tbl_Login user = LogMgr.LoginUser(Login_Obj);
             if (user == null)

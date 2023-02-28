@@ -13,7 +13,7 @@ namespace DAL.Manager
 
         public tbl_Login LoginUser(tbl_Login checkObj)
         {
-            tbl_Login isExist = db.tbl_Login.Where(e => e.Email == checkObj.Email && e.Password == checkObj.Password).SingleOrDefault();
+            tbl_Login isExist = db.tbl_Login.Where(e => e.Email == checkObj.Email && e.UserPassword == checkObj.UserPassword).SingleOrDefault();
             int roleId = 0;
             if (isExist != null)
             {
