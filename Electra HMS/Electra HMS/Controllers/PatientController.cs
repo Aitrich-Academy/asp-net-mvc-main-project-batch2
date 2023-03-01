@@ -1,6 +1,11 @@
-﻿using System;
+﻿using DAL.Manager;
+using DAL.Models;
+using Electra_HMS.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,82 +13,40 @@ namespace Electra_HMS.Controllers
 {
     public class PatientController : Controller
     {
+        PatientManager PatMgr = new PatientManager();
         // GET: Patient
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        // GET: Patient/Details/5
-        public ActionResult Details(int id)
+        public ActionResult List_Pat()
         {
-            return View();
-        }
-
-        // GET: Patient/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Patient/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            List<Patient> retList = PatMgr.PatientList();
+            List<Ent_Patient> Ent_List = new List<Ent_Patient>();
+            foreach (var item in retList)
             {
-                // TODO: Add insert logic here
+                Ent_List.Add(new Ent_Patient
+                {
+                    PatientID = item.PatientID,
+                    P_Name = item.P_Name,
+                    P_PhoneNo = item.P_PhoneNo,
+                    P_Email = item.P_Email,
+                    P_Address = item.P_Address,
+                    P_BloodGroup = item.P_BloodGroup,
+                    P_Gender = item.P_Gender,
 
-                return RedirectToAction("Index");
+                    P_DOB = (DateTime)item.P_DOB,
+                    P_Status = item.P_Status,
+                    P_Image = item.P_Image,
+                    P_Password = item.P_Password,
+                });
             }
-            catch
-            {
-                return View();
-            }
+            return View(Ent_List);
         }
+        
 
-        // GET: Patient/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: Patient/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Patient/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Patient/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
+
+
+
+
+
