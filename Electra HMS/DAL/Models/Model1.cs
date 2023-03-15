@@ -23,10 +23,6 @@ namespace DAL.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Appointment>()
-                .Property(e => e.Appointment_Status)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Appointment>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
@@ -54,6 +50,15 @@ namespace DAL.Models
             modelBuilder.Entity<Doctor>()
                 .Property(e => e.D_Password)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Doctor>()
+                .Property(e => e.D_Image)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Doctor>()
+                .HasMany(e => e.Schedule)
+                .WithOptional(e => e.Doctor)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<Patient>()
                 .Property(e => e.P_Name)

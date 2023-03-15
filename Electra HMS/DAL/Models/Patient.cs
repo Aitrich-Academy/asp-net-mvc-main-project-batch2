@@ -23,7 +23,6 @@ namespace DAL.Models
         [StringLength(50)]
         public string P_PhoneNo { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string P_Email { get; set; }
 

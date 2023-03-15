@@ -24,5 +24,7 @@ namespace DAL.Models
         public string TimePerPatient { get; set; }
 
         public string Status { get; set; }
+
+        public virtual Doctor Doctor { get; set; }
     }
 }
