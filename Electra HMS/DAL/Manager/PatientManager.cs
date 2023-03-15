@@ -85,7 +85,52 @@ namespace DAL.Manager
             return db.Patient.ToList();
         }
 
+        public Patient IsExist(Patient checkObj)
+        {
+            return db.Patient.Where(e => e.P_Email == checkObj.P_Email).SingleOrDefault();
+        }
 
+        public Patient GetPatientById(int id)
+        {
+            return db.Patient.Where(e => e.PatientID == id && e.P_Status == "A").SingleOrDefault();
+        }
+
+        public int UpdatePatProfile(Patient updObj)
+        {
+            db.Entry(updObj).State = EntityState.Modified;
+            return db.SaveChanges();
+        }
+
+
+        public string UpdateProfile(Patient updObj)
+        {
+            Patient obj = db.Patient.Where(e => e.P_Email == updObj.P_Email).SingleOrDefault();
+            obj.P_Name = updObj.P_Name;
+            obj.P_Image = updObj.P_Image;
+            obj.P_Address = updObj.P_Address;
+            db.Entry(obj).State = EntityState.Modified;
+            int result = db.SaveChanges();
+            if (result > 0)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "Failed";
+            }
+
+
+        }
+
+        public Patient PatientById(int id)
+        {
+            return db.Patient.Where(e => e.PatientID == id && e.P_Status == "A").SingleOrDefault();
+        }
+
+        public List<Appointment> GetAppointmentByPatientId(int id)
+        {
+            return db.Appointment.Where(e => e.PatientID == id).ToList();
+        }
     }
 }
 

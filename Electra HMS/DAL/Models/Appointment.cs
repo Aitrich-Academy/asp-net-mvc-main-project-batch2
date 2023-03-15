@@ -18,14 +18,13 @@ namespace DAL.Models
 
         public DateTime? AppointmentDate { get; set; }
 
-        [StringLength(50)]
-        public string Appointment_Status { get; set; }
+        public bool Appointment_Status { get; set; }
 
         [StringLength(100)]
         public string Description { get; set; }
 
-        public virtual Patient Patient { get; set; }
-
         public virtual Doctor Doctor { get; set; }
+
+        public virtual Patient Patient { get; set; }
     }
 }

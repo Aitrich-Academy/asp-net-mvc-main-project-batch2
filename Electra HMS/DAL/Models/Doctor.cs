@@ -13,31 +13,26 @@ namespace DAL.Models
         public Doctor()
         {
             Appointment = new HashSet<Appointment>();
+            Schedule = new HashSet<Schedule>();
         }
 
         public int DoctorID { get; set; }
 
-        [Required]
         [StringLength(30)]
         public string D_Name { get; set; }
 
-        [Required]
         public string D_PhoneNo { get; set; }
 
         [StringLength(40)]
         public string D_Email { get; set; }
 
-        public string Designation { get; set; }
-
         public int DeptId { get; set; }
 
-        [Required]
         public string D_Address { get; set; }
 
         [StringLength(100)]
         public string D_Specialization { get; set; }
 
-        [Required]
         public string D_Gender { get; set; }
 
         public DateTime? D_DOB { get; set; }
@@ -47,9 +42,15 @@ namespace DAL.Models
         [StringLength(50)]
         public string D_Password { get; set; }
 
+        [StringLength(50)]
+        public string D_Image { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }
 
         public virtual Department Department { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Schedule> Schedule { get; set; }
     }
 }

@@ -109,6 +109,13 @@ namespace DAL.Manager
             obj.D_Name = updObj.D_Name;
             obj.D_PhoneNo = updObj.D_PhoneNo;
             obj.D_Address = updObj.D_Address;
+
+            obj.DeptId = updObj.DeptId;
+            obj.D_Specialization = updObj.D_Specialization;
+            obj.D_DOB = (DateTime)updObj.D_DOB;
+            obj.D_Password = updObj.D_Password;
+            obj.D_Email = updObj.D_Email;
+            obj.DoctorID = updObj.DoctorID;
             db.Entry(obj).State = EntityState.Modified;
             int result = db.SaveChanges();
             if (result > 0)
